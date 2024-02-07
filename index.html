@@ -17,14 +17,14 @@
   <meta property="og:url" content="https://bibd.my.id/" />
   <meta property="og:title" content="BIBD - Badan Intelijen Bokep Dunia - Nonton Video Porno Gratis dan Film Seks Terbaru" />
   <meta property="og:description" content="Cari sensasi seru# BIBD - Badan Intelijen Bokep Dunia punya koleksi film seksi gratis dan video porno cepat (tube porn). Sekarang ada lebih dari 10 juta video seks gratis! Nikmati aksi panas, cewek-cewek seksi dalam klip porno berkualitas xxx. Gak cuma itu, ada juga yang lagi viral dan bikin kamu makin penasaran!" />
-  <meta property="og:image" content="" />
+  <meta property="og:image" content="/assets/icons/main.svg" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://bibd.my.id/" />
   <meta property="twitter:title" content="BIBD - Badan Intelijen Bokep Dunia - Nonton Video Porno Gratis dan Film Seks Terbaru" />
   <meta property="twitter:description" content="Cari sensasi seru# BIBD - Badan Intelijen Bokep Dunia punya koleksi film seksi gratis dan video porno cepat (tube porn). Sekarang ada lebih dari 10 juta video seks gratis! Nikmati aksi panas, cewek-cewek seksi dalam klip porno berkualitas xxx. Gak cuma itu, ada juga yang lagi viral dan bikin kamu makin penasaran!" />
-  <meta property="twitter:image" content="" />
+  <meta property="twitter:image" content="/assets/icons/main.svg" />
 
   <!-- Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/main.svg">
@@ -34,13 +34,16 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./assets/src/css/style.css">
-  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="./assets/src/css/lightbox.css">
+  <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
 
   <!-- Scripts -->
+  <script defer src="./assets/src/js/module/alpinejs.js"></script>
+  <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
   <script defer type="module" src="./assets/src/js/index.js"></script>
   <script defer src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script defer src="./assets/src/js/module/lightbox-plus-jquery.js"></script>
 
 </head>
 
@@ -53,15 +56,7 @@
         <a class="x-nav-brand-name">B.I.B.D+</a>
         <small class="x-nav-brand-full-name">Badan Intelejen Bokep Dunia</small>
       </div>
-      <div class="x-menu" x-data="{ activeTab: null, iconStatus: [false, false, true, false, false], handleClick: function(item, index) {
-      const elements = document.querySelectorAll('.x-main > div');
-      elements.forEach(element => {
-        element.style.display = 'none';
-      });
-      document.querySelector(`.x-${item.toLowerCase()}`).style.display = 'block';
-      this.activeTab = (this.activeTab === index) ? null : index;
-      this.iconStatus = this.iconStatus.map((_, i) => i === index);
-    } }">
+      <div class="x-menu" x-data="{ activeTab: null, iconStatus: [false, false, true, false, false], handleClick: function(item, index) { const elements = document.querySelectorAll('.x-main > div'); elements.forEach(element => { element.style.display = 'none'; }); document.querySelector(`.x-${item.toLowerCase()}`).style.display = 'block'; this.activeTab = (this.activeTab === index) ? null : index; this.iconStatus = this.iconStatus.map((_, i) => i === index); } }">
         <template x-for="(item, index) in ['Faves', 'Image', 'Home', 'Stream', 'Search']" :key="index">
           <div class="x-menu-item" @click="handleClick(item, index)">
             <svg class="icon-{{ item.toLowerCase() }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer;">
@@ -70,11 +65,9 @@
             <small x-text="item"></small>
           </div>
         </template>
-
       </div>
     </nav>
   </header>
-
 
   <!-- Main -->
   <div class="x-main">
@@ -108,7 +101,8 @@
         <img src="https://source.unsplash.com/random" alt="">
         <img src="https://source.unsplash.com/random" alt="">
         <img src="https://source.unsplash.com/random" alt="">
-        <img src="https://source.unsplash.com/random" alt=""><img src="https://source.unsplash.com/random" alt="">
+        <img src="https://source.unsplash.com/random" alt="">
+        <img src="https://source.unsplash.com/random" alt="">
       </div>
     </div>
     <!-- End Image -->
@@ -130,6 +124,8 @@
       <h1>Search</h1>
     </div>
   </div>
+
+
 </body>
 
 </html>
