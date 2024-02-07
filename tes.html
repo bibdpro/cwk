@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Nama</title>
+</head>
+
+<body>
+    <script>
+        // Daftar nama yang mungkin untuk judul halaman
+        var daftarNama = ["Anjing", "Kucing", "Kelinci", "Sapi", "Kuda", "Ayam"];
+
+        // Pilih nama secara acak dari daftarNama untuk judul halaman
+        var randomIndex = Math.floor(Math.random() * daftarNama.length);
+        var randomTitle = daftarNama[randomIndex];
+
+        // Mengatur judul halaman
+        document.title = randomTitle;
+    </script>
+</body>
+
+</html>
