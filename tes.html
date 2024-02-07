@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generator Nama</title>
+    <title></title>
+    <!-- Tag Open Graph untuk judul -->
+    <meta property="og:title" content="">
 </head>
-
 <body>
+    <h1>Generator Nama</h1>
+    <p>Nama yang dihasilkan akan muncul di judul halaman.</p>
+
     <script>
-        // Daftar nama yang mungkin untuk judul halaman
+        // Daftar nama yang mungkin
         var daftarNama = ["Anjing", "Kucing", "Kelinci", "Sapi", "Kuda", "Ayam"];
 
         // Pilih nama secara acak dari daftarNama untuk judul halaman
         var randomIndex = Math.floor(Math.random() * daftarNama.length);
-        var randomTitle = daftarNama[randomIndex];
+        var randomName = daftarNama[randomIndex];
 
-        // Mengatur judul halaman
-        document.title = randomTitle;
+        // Mengatur judul halaman dengan nama yang dipilih secara acak
+        document.title = randomName;
+        // Mengatur judul Open Graph dengan nama yang dipilih secara acak
+        document.querySelector('meta[property="og:title"]').setAttribute("content", randomName);
     </script>
 </body>
-
 </html>
